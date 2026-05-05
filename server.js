@@ -101,8 +101,17 @@ for (let email of emailList) {
 //   console.log("Email Dashboard running on port 3000")
 // );
 
+const express = require("express");
+const app = express();
+
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  console.log("Server running on port", PORT);
+app.get("/", (req, res) => {
+  res.send("App is running");
 });
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+
